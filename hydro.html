@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroHeroHunt Hackathon Project</title>
+    <link rel="stylesheet" href="hydro.css">
+    <link rel="stylesheet" href="hydro.js">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h1>💧 HydroHero<br><span>Hunt</span></h1>
+
+        <nav>
+            <a class="active" href="#home">🏠 Home</a>
+            <a href="#hydration">💧 My Hydration</a>
+            <a href="#squad">👥 My Squad</a>
+            <a href="#leaderboard">🏆 Leaderboard</a>
+            <a href="#analytics">📊 Analytics</a>
+        </nav>
+
+        <div class="challenge">
+            <h2>🏆 HydroHero Challenge</h2>
+            <p>Stay hydrated & win together!</p>
+            <div class="progress"><div></div></div>
+            <p>75% Completed</p>
+            <small>📅 7-Day Challenge</small>
+        </div>
+
+        <div class="profile">
+            <h2>🟣 M</h2>
+            <p>Mohana Priya<br>Hydro Hero ✨</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main id="home">
+
+        <header>
+            <input type="search" placeholder="🔍 Search teams...">
+            <div>🔔　🔵 M</div>
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+            <div>
+                <small>💧 CAMPUS HYDRATION CHALLENGE</small>
+                <h1>Make Every Sip Count.<br>
+                    Become a <span>HydroHero!</span>
+                </h1>
+                <p>Stay hydrated, build your streak and win together.</p>
+                <button onclick="startHydrating()">Start Hydrating ➜</button>
+            </div>
+            <div class="hero-image">💦 🧴 💦</div>
+            <h2 class="slogan">Drink<br>Compete<br>Win</h2>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="stats">
+            <div class="stat">
+                💧
+                <p>Today's Intake</p>
+                <h2 id="todayIntake">1750 ml</h2>
+            </div>
+
+            <div class="stat">
+                🎯
+                <p>Daily Goal</p>
+                <h2 id="dailyGoal">2275 ml</h2>
+            </div>
+
+            <div class="stat">
+                🔥
+                <p>Current Streak</p>
+                <h2>3 Days</h2>
+            </div>
+
+            <div class="stat">
+                🏆
+                <p>Squad Rank</p>
+                <h2>#2</h2>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+            <!-- HYDRATION TRACKER -->
+            <div class="card" id="hydration">
+                <h2>💧 Your Hydration Tracker</h2>
+
+                <div class="tracker">
+                    <div class="water-bottle">
+                        <span id="percentage">77%</span>
+                        <small>COMPLETED</small>
+                    </div>
+
+                    <div class="tracker-info">
+                        <h1 id="intake">1750 ml</h1>
+                        <p id="remaining">525 ml remaining</p>
+
+                        <div class="progress">
+                            <div id="waterProgress"></div>
+                        </div>
+
+                        <div class="amounts">
+                            <button onclick="addWater(250)">🥛<br>+250 ml</button>
+                            <button onclick="addWater(500)">🍼<br>+500 ml</button>
+                            <button onclick="addWater(750)">🥤<br>+750 ml</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK WATER LOGGING -->
+            <div class="card">
+                <h2>⚡ Quick Water Logging</h2>
+                <h4>Choose or enter amount:</h4>
+
+                <div class="log">
+                    <input type="number" id="waterAmount"
+                           placeholder="Enter amount (ml)">
+                    <button onclick="logWater()">Add</button>
+                </div>
+
+                <div class="coffee">
+                    ☕ Logged Coffee? +200 ml extra target!
+                </div>
+                <p id="message"></p>
+            </div>
+
+            <!-- SQUAD -->
+            <div class="card" id="squad">
+                <h2>👥 My Hydration Squad</h2>
+                <button onclick="createTeam()">Create Team +</button>
+
+                <div class="squad-banner">
+                    <h1>👨🏻‍🎓 👩🏻‍🎓 👨🏽‍🎓 👩🏻‍🎓</h1>
+                    <h3>👑 Hydro Warriors</h3>
+                    <p>👥 4 Members</p>
+                    <h2>75% Team Progress</h2>
+                </div>
+
+                <div class="member">
+                    <span>🔵 Mohana (You)</span>
+                    <div class="member-progress"><div style="width:88%"></div></div>
+                    88%
+                </div>
+
+                <div class="member">
+                    <span>🟣 Ananya</span>
+                    <div class="member-progress"><div style="width:76%"></div></div>
+                    76%
+                </div>
+
+                <div class="member">
+                    <span>🟠 Rahul</span>
+                    <div class="member-progress"><div style="width:82%"></div></div>
+                    82%
+                </div>
+
+                <div class="member">
+                    <span>🟡 Sneha</span>
+                    <div class="member-progress"><div style="width:66%"></div></div>
+                    66%
+                </div>
+            </div>
+
+            <!-- LEADERBOARD -->
+            <div class="card" id="leaderboard">
+                <h2>🏆 HydroHero Leaderboard</h2>
+
+                <div class="podium">
+                    <div>🥈<h3>Hydro Achievers</h3>74%<h1>2</h1></div>
+                    <div>👑<h3>Hostel Block A</h3>86%<h1>1</h1></div>
+                    <div>🥉<h3>Sip Kings</h3>69%<h1>3</h1></div>
+                </div>
+
+                <p>4　Hydro Champs</p>
+                <p>5　Dream Team</p>
+                <p>6　Water Warriors</p>
+            </div>
+
+            <!-- ANALYTICS -->
+            <div class="card" id="analytics">
+                <h2>📊 Hydration Analytics</h2>
+                <h3>This Week</h3>
+
+                <div class="chart">
+                    <div style="height:50%">1000</div>
+                    <div style="height:65%">1300</div>
+                    <div style="height:60%">1200</div>
+                    <div style="height:85%">1700</div>
+                    <div style="height:58%">1150</div>
+                    <div style="height:67%">1350</div>
+                    <div style="height:77%">1750</div>
+                </div>
+
+                <div class="days">
+                    <span>Mon</span><span>Tue</span>
+                    <span>Wed</span><span>Thu</span>
+                    <span>Fri</span><span>Sat</span>
+                    <span>Sun</span>
+                </div>
+            </div>
+
+            <!-- VIRTUAL PLANT -->
+            <div class="card plant">
+                <h2>🌱 Your Virtual Plant</h2>
+                <div class="plant-image">☀️ 🌱</div>
+                <h3>Your plant is growing. Keep sipping!</h3>
+            </div>
+
+            <!-- GOAL CALCULATOR -->
+            <div class="card">
+                <h2>🎯 Daily Goal Calculator</h2>
+                <p>Enter your weight to get your target.</p>
+
+                <input type="number" id="weight" placeholder="Weight in kg">
+                <button onclick="calculateGoal()">Calculate</button>
+
+                <h3 id="recommendation">💧 Recommended: 2275 ml/day</h3>
+            </div>
+
+            <!-- CAFFEINE -->
+            <div class="card">
+                <h2>☕ Caffeine Offset</h2>
+                <p>Add 200 ml for each coffee/energy drink.</p>
+                <button onclick="logCoffee()">Log Coffee</button>
+                <h3>☕ +200 ml</h3>
+            </div>
+
+            <!-- REMINDER -->
+            <div class="card">
+                <h2>🔔 Hydration Reminder</h2>
+                <p>Get notified to drink water regularly.</p>
+                <button onclick="enableReminder()">Enable Reminders</button>
+                <h1>🔔</h1>
+                <p id="reminderMessage"></p>
+            </div>
+
+        </section>
+
+        <footer>
+            💧 HydroHero Hunt
+            <p>Hydrate together. Compete together. Grow together.</p>
+            <small>© 2026 HydroHero Hunt Hackathon Project ❤️</small>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

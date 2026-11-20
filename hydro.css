@@ -1,0 +1,534 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #e5f2ff;
+    color: #092c60;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 205px;
+    background: linear-gradient(#062e70, #001b48);
+    color: white;
+    padding: 20px 14px;
+    flex-shrink: 0;
+}
+
+.sidebar h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.sidebar h1 span {
+    color: #20dafa;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(90deg, #0786ed, #08c9e8);
+}
+
+.challenge {
+    background: #103c7b;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 15px;
+    border: 1px solid #2688d9;
+}
+
+.challenge h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.challenge p {
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 60px;
+}
+
+.profile h2 {
+    background: purple;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+header input {
+    padding: 12px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(110deg, #063a8c, #008dd5, #0751a4);
+    color: white;
+    padding: 25px 35px;
+    min-height: 220px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin: 12px 0;
+    font-style: italic;
+}
+
+.hero h1 span {
+    color: #21e1f3;
+}
+
+.hero p {
+    margin-bottom: 15px;
+}
+
+.hero button {
+    background: #16e0e5;
+    color: #00336c;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-image {
+    font-size: 85px;
+}
+
+.slogan {
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* STATISTICS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.stat {
+    background: white;
+    padding: 18px 12px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 3px 12px #9bbbd755;
+    font-size: 25px;
+}
+
+.stat p {
+    font-size: 13px;
+    margin: 7px;
+    font-weight: bold;
+}
+
+.stat h2 {
+    font-size: 22px;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.3fr;
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    padding: 16px;
+    border-radius: 17px;
+    box-shadow: 0 3px 12px #a9c9e855;
+    min-width: 0;
+}
+
+.card h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.card button {
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, #087de8, #12bce9);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* WATER TRACKER */
+.tracker {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 230px;
+}
+
+.water-bottle {
+    width: 120px;
+    height: 200px;
+    flex-shrink: 0;
+    border: 5px solid #58b5ed;
+    border-radius: 25px;
+    background: linear-gradient(#a4e9ff, #078de0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: inset 5px 0 15px white;
+}
+
+.water-bottle span {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.water-bottle small {
+    font-size: 10px;
+}
+
+.tracker-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tracker-info h1 {
+    font-size: 25px;
+}
+
+.tracker-info p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 12px;
+    background: #dce9f8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress div {
+    width: 77%;
+    height: 100%;
+    background: linear-gradient(90deg, #0768e9, #12d0ce);
+    border-radius: 20px;
+}
+
+.amounts {
+    display: flex;
+    gap: 6px;
+    margin-top: 22px;
+}
+
+.amounts button {
+    flex: 1;
+    background: #e4f3ff;
+    color: #064184;
+    padding: 10px 3px;
+    font-size: 12px;
+}
+
+/* WATER LOGGING */
+.log {
+    display: flex;
+    gap: 8px;
+}
+
+.log input {
+    width: 65%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #cbdcec;
+    border-radius: 12px;
+}
+
+.coffee {
+    margin-top: 25px;
+    padding: 20px 12px;
+    background: #e3f1ff;
+    border-radius: 14px;
+    font-weight: bold;
+}
+
+/* SQUAD */
+.squad-banner {
+    background: linear-gradient(120deg, #c6f0ff, #9cd8f4);
+    text-align: center;
+    padding: 15px 5px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+.squad-banner h1 {
+    font-size: 35px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 12px 0;
+    font-size: 11px;
+}
+
+.member span {
+    min-width: 95px;
+    font-weight: bold;
+}
+
+.member-progress {
+    flex: 1;
+    height: 9px;
+    background: #dce9f8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.member-progress div {
+    height: 100%;
+    background: #0799d8;
+    border-radius: 10px;
+}
+
+/* LEADERBOARD */
+.podium {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.podium div {
+    flex: 1;
+    background: linear-gradient(#d7e4f5, #a6b9d2);
+    padding: 12px 3px;
+    border-radius: 10px 10px 0 0;
+    font-size: 12px;
+}
+
+.podium div:nth-child(1) {
+    height: 125px;
+}
+
+.podium div:nth-child(2) {
+    height: 150px;
+    background: linear-gradient(#ffe98b, #e6aa08);
+}
+
+.podium div:nth-child(3) {
+    height: 105px;
+    background: linear-gradient(#f3c19c, #b16a45);
+}
+
+.podium h3 {
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+.podium h1 {
+    margin-top: 5px;
+}
+
+/* ANALYTICS */
+.chart {
+    height: 145px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    border-bottom: 2px solid #c5d8ed;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 28px,
+        #e0eaf5 29px
+    );
+    padding: 5px;
+}
+
+.chart div {
+    width: 9%;
+    min-height: 15px;
+    background: linear-gradient(#09a4ed, #0868e9);
+    border-radius: 7px 7px 0 0;
+    color: transparent;
+}
+
+.days {
+    display: flex;
+    justify-content: space-around;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+/* PLANT */
+.plant {
+    background: linear-gradient(120deg, #e6ffdc, #b5ec9d);
+}
+
+.plant-image {
+    font-size: 75px;
+    text-align: center;
+    padding: 15px;
+    background: #d5f6bc;
+    border-radius: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #052c67;
+    color: white;
+    padding: 18px;
+    margin: 15px -15px -15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1000px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 175px;
+    }
+}
+
+@media (max-width: 650px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sidebar h1 {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    nav a {
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    .challenge,
+    .profile {
+        display: none;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 20px;
+        min-height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .hero-image {
+        font-size: 40px;
+    }
+
+    .slogan {
+        display: none;
+    }
+
+    .tracker {
+        gap: 10px;
+    }
+
+    .water-bottle {
+        width: 95px;
+        height: 170px;
+    }
+
+    .stat h2 {
+        font-size: 17px;
+    }
+
+    header input {
+        width: 65%;
+    }
+}
